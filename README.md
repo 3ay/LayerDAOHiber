@@ -1,0 +1,1 @@
+[Миграции c Hibernate*](https://github.com/netology-code/jd-homeworks/tree/master/hibernate/task3)
