@@ -1,6 +1,5 @@
 package com.netology.layerdaohiber.dao;
 
-import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.persistence.Column;

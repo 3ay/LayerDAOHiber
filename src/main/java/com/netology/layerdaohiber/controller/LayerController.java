@@ -1,7 +1,5 @@
 package com.netology.layerdaohiber.controller;
 
-import com.netology.layerdaohiber.dao.PersonDAO;
-import com.netology.layerdaohiber.repository.LayerRepository;
 import com.netology.layerdaohiber.service.LayerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
