@@ -13,10 +13,8 @@ import java.util.Optional;
 @Repository
 public interface LayerRepository extends JpaRepository<PersonDAO, PersonKeyId> {
     List<PersonDAO> findAllByCityOfLiving(String city);
+    List<PersonDAO> findById_AgeLessThanOrderById_AgeAsc(int age);
 
-    @Query("select p from PersonDAO p where p.id.age < :age order by p.id.age asc")
-    List<PersonDAO> getPersonsWithLessAge(@Param("age") int age);
+    Optional<PersonDAO> findById_NameAndId_Surname(String name, String surname);
 
-    @Query("select p from PersonDAO p where p.id.name = :name and p.id.surname = :surname")
-    Optional<PersonDAO> getPersonsByNameAndSurname(@Param("name") String name, @Param("surname") String surname);
 }

@@ -21,11 +21,11 @@ public class LayerServiceImpl implements LayerService {
 
     @Override
     public List<PersonDAO> getPersonsWithLessAge(int age) {
-        return repository.getPersonsWithLessAge(age);
+        return repository.findById_AgeLessThanOrderById_AgeAsc(age);
     }
 
     @Override
     public Optional<PersonDAO> getPersonsByNameAndSurname(String name, String surname) {
-        return repository.getPersonsByNameAndSurname(name, surname);
+        return repository.findById_NameAndId_Surname(name, surname);
     }
 }
