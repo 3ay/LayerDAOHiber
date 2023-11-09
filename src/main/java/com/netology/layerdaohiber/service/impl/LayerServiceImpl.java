@@ -6,8 +6,8 @@ import com.netology.layerdaohiber.service.LayerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -15,12 +15,17 @@ public class LayerServiceImpl implements LayerService {
     private final LayerRepository repository;
 
     @Override
-    public List<String> getPersonsByCity(String city) {
-        List<String> persons = new ArrayList<>();
-        List<PersonDAO> personDAOS = repository.getPersonsByCity(city);
-        for (PersonDAO p : personDAOS) {
-            persons.add(p.toString());
-        }
-        return persons;
+    public List<PersonDAO> getPersonsByCityOfLiving(String city) {
+        return repository.findAllByCityOfLiving(city);
+    }
+
+    @Override
+    public List<PersonDAO> getPersonsWithLessAge(String age) {
+        return repository.getPersonsWithLessAge(age);
+    }
+
+    @Override
+    public Optional<PersonDAO> getPersonsByNameAndSurname(String name, String surname) {
+        return repository.getPersonsByNameAndSurname(name, surname);
     }
 }

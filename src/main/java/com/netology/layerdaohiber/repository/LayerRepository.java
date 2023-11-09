@@ -1,9 +1,22 @@
 package com.netology.layerdaohiber.repository;
 
 import com.netology.layerdaohiber.dao.PersonDAO;
+import com.netology.layerdaohiber.dao.PersonKeyId;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
-public interface LayerRepository {
-    List<PersonDAO> getPersonsByCity(String city);
+@Repository
+public interface LayerRepository extends JpaRepository<PersonDAO, PersonKeyId> {
+    List<PersonDAO> findAllByCityOfLiving(String city);
+
+    @Query("select p from PersonDAO p where p.id.age < :age order by p.id.age asc")
+    List<PersonDAO> getPersonsWithLessAge(@Param("age") String age);
+
+    @Query("select p from PersonDAO p where p.id.name = :name and p.id.surname = :surname")
+    Optional<PersonDAO> getPersonsByNameAndSurname(@Param("name") String name, @Param("surname") String surname);
 }
