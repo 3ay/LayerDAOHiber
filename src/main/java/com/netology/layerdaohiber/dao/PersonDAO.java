@@ -1,6 +1,7 @@
 package com.netology.layerdaohiber.dao;
 
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.ToString;
 
 import javax.persistence.Column;
@@ -11,6 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "persons")
 @ToString
+@Getter
 public class PersonDAO {
     @EmbeddedId
     private PersonKeyId id;

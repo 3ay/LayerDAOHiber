@@ -22,7 +22,7 @@ public class LayerController {
     }
 
     @GetMapping("find/persons/less-age")
-    public ResponseEntity<List<PersonDAO>> getPersonsWithLessAge(@RequestParam(value = "age") String age) {
+    public ResponseEntity<List<PersonDAO>> getPersonsWithLessAge(@RequestParam(value = "age") int age) {
         return ResponseEntity.ok(service.getPersonsWithLessAge(age));
     }
 

@@ -15,7 +15,7 @@ public interface LayerRepository extends JpaRepository<PersonDAO, PersonKeyId> {
     List<PersonDAO> findAllByCityOfLiving(String city);
 
     @Query("select p from PersonDAO p where p.id.age < :age order by p.id.age asc")
-    List<PersonDAO> getPersonsWithLessAge(@Param("age") String age);
+    List<PersonDAO> getPersonsWithLessAge(@Param("age") int age);
 
     @Query("select p from PersonDAO p where p.id.name = :name and p.id.surname = :surname")
     Optional<PersonDAO> getPersonsByNameAndSurname(@Param("name") String name, @Param("surname") String surname);
