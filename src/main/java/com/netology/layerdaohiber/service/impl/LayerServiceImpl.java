@@ -16,16 +16,16 @@ public class LayerServiceImpl implements LayerService {
 
     @Override
     public List<PersonDAO> getPersonsByCityOfLiving(String city) {
-        return repository.findAllByCityOfLiving(city);
+        return repository.getPersonsByCityOfLiving(city);
     }
 
     @Override
     public List<PersonDAO> getPersonsWithLessAge(int age) {
-        return repository.findById_AgeLessThanOrderById_AgeAsc(age);
+        return repository.getPersonsWithLessAge(age);
     }
 
     @Override
     public Optional<PersonDAO> getPersonsByNameAndSurname(String name, String surname) {
-        return repository.findById_NameAndId_Surname(name, surname);
+        return repository.getPersonsByNameAndSurname(name, surname);
     }
 }
