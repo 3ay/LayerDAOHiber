@@ -14,7 +14,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.formLogin().and()
                 .authorizeHttpRequests().antMatchers("/find/persons/all").permitAll()
-                .anyRequest().authenticated();
+                .and()
+                .authorizeHttpRequests().anyRequest().authenticated()
+                .and();
 
     }
     @Override
