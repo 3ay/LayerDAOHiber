@@ -32,4 +32,9 @@ public class LayerController {
         return ResponseEntity.ok(service.getPersonsByNameAndSurname(name, surname));
     }
 
+    @GetMapping("find/persons/all")
+    public ResponseEntity<List<PersonDAO>> getAll() {
+        return ResponseEntity.ok(service.getAll());
+    }
+
 }

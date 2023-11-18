@@ -20,6 +20,11 @@ public class LayerServiceImpl implements LayerService {
     }
 
     @Override
+    public List<PersonDAO> getAll() {
+        return repository.findAll();
+    }
+
+    @Override
     public List<PersonDAO> getPersonsWithLessAge(int age) {
         return repository.getPersonsWithLessAge(age);
     }

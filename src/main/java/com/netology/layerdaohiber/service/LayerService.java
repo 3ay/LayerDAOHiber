@@ -7,6 +7,7 @@ import java.util.Optional;
 
 public interface LayerService {
     List<PersonDAO> getPersonsByCityOfLiving(String city);
+    List<PersonDAO> getAll();
     List<PersonDAO> getPersonsWithLessAge(int age);
     Optional<PersonDAO> getPersonsByNameAndSurname(String name,String surname);
 }
