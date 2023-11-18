@@ -9,5 +9,5 @@ public interface LayerService {
     List<PersonDAO> getPersonsByCityOfLiving(String city);
     List<PersonDAO> getAll();
     List<PersonDAO> getPersonsWithLessAge(int age);
-    Optional<PersonDAO> getPersonsByNameAndSurname(String name,String surname);
+    Optional<PersonDAO> getPersonsByNameAndUsername(String name,String username);
 }

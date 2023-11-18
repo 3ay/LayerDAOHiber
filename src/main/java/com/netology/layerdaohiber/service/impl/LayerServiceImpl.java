@@ -30,7 +30,7 @@ public class LayerServiceImpl implements LayerService {
     }
 
     @Override
-    public Optional<PersonDAO> getPersonsByNameAndSurname(String name, String surname) {
-        return repository.getPersonsByNameAndSurname(name, surname);
+    public Optional<PersonDAO> getPersonsByNameAndUsername(String name, String username) {
+        return repository.getPersonsByNameAndUsername(name, username);
     }
 }

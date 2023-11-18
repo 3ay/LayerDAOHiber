@@ -19,5 +19,7 @@ public class PersonDAO {
     private String phoneNumber;
     @Column(name = "city_of_living")
     private String cityOfLiving;
+    @Column(name = "username")
+    private String username;
 
 }

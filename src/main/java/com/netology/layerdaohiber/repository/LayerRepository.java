@@ -17,8 +17,8 @@ public interface LayerRepository extends JpaRepository<PersonDAO, PersonKeyId> {
     @Query("select p from PersonDAO p where p.id.age < :age order by p.id.age asc")
     List<PersonDAO> getPersonsWithLessAge(@Param("age") int age);
 
-    @Query("select p from PersonDAO p where p.id.name = :name and p.id.surname = :surname")
-    Optional<PersonDAO> getPersonsByNameAndSurname(@Param("name") String name, @Param("surname") String surname);
+    @Query("select p from PersonDAO p where p.id.name = :name and p.username = :username")
+    Optional<PersonDAO> getPersonsByNameAndUsername(@Param("name") String name, @Param("username") String username);
     @Query("select p from PersonDAO p")
     List<PersonDAO> findAll();
 }
